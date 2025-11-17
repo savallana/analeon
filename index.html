@@ -6,11 +6,22 @@
     <title>Savall Rings</title>
 
     <style>
+
+        /* ANIMACIÓN DE FONDO CAMBIANDO COLORES */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8d6e1; /* Rosa pastel */
+
+            /* Colores del fondo animado */
+            animation: cambiarColor 12s infinite alternate;
+        }
+
+        @keyframes cambiarColor {
+            0%   { background-color: #ffd6e7; }  /* Rosa pastel */
+            33%  { background-color: #b8f5f0; }  /* Turquesa suave */
+            66%  { background-color: #ffeccf; }  /* Melocotón pastel */
+            100% { background-color: #d3eaff; }  /* Azul pastel */
         }
 
         /* ENCABEZADO */
@@ -21,14 +32,14 @@
             text-align: center;
         }
 
-        /* MENU SUPERIOR */
+        /* MENÚ SUPERIOR */
         nav {
             background-color: #ffb6c9;
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 35px;
             padding: 15px 0;
-            font-size: 18px;
+            font-size: 19px;
         }
 
         nav a {
@@ -41,90 +52,85 @@
             text-decoration: underline;
         }
 
-        /* SECCIÓN PRINCIPAL */
-        .intro-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-            gap: 40px;
+        /* ESTILO DE CADA SECCIÓN */
+        section {
+            padding: 50px;
+            width: 80%;
+            margin: auto;
         }
 
-        .texto {
-            width: 50%;
+        h2 {
+            font-size: 28px;
+            text-align: center;
+        }
+
+        p {
             font-size: 18px;
             line-height: 1.6;
         }
 
-        .imagen {
-            width: 50%;
-        }
-
-        .imagen img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        }
-
-        /* SEGUNDO APARTADO */
-        .productos {
-            padding: 50px;
-            text-align: center;
-        }
-
-        .productos h2 {
-            font-size: 28px;
-        }
-
-        .productos p {
-            font-size: 18px;
-            width: 70%;
-            margin: auto;
-        }
     </style>
 </head>
 
 <body>
 
-    <!-- NOMBRE DE LA EMPRESA -->
+    <!-- ENCABEZADO CON TU NOMBRE -->
     <header>
         <h1>Savall Rings</h1>
     </header>
 
-    <!-- MENU DE APARTADOS -->
+    <!-- MENÚ SUPERIOR CON LOS 4 APARTADOS -->
     <nav>
         <a href="#materiales">Materiales</a>
-        <a href="#productos">Nuestros Productos</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#cuidado">Consejos de Cuidado</a>
+        <a href="#contacto">Contacto</a>
     </nav>
 
-    <!-- PRIMER APARTADO -->
-    <section id="materiales" class="intro-container">
-        <div class="texto">
-            <h2>Materiales que Utilizamos</h2>
-            <p>
-                Nuestros anillos están hechos a mano utilizando materiales de alta calidad. 
-                Trabajamos principalmente con <strong>acero inoxidable</strong>, <strong>plata 925</strong> 
-                y <strong>aleaciones hipoalergénicas</strong>.  
-                Cada pieza está diseñada para ser duradera, cómoda y resistente al uso diario.
-            </p>
-            <p>
-                Además, algunos modelos incorporan piedras naturales como amatista, cuarzo rosa 
-                o turquesa, seleccionadas cuidadosamente para garantizar belleza y autenticidad.
-            </p>
-        </div>
 
-        <div class="imagen">
-            <img src="ruta-de-tu-imagen.jpg" alt="Anillos artesanales">
-        </div>
+    <!-- 1️⃣ APARTADO: MATERIALES -->
+    <section id="materiales">
+        <h2>Materiales que Utilizamos</h2>
+        <p>
+            En Savall Rings trabajamos con <strong>acero inoxidable de alta calidad</strong>, 
+            <strong>plata 925</strong> y <strong>aleaciones hipoalergénicas</strong>.  
+            También usamos piedras naturales seleccionadas como amatista, cuarzo rosa y turquesa.
+        </p>
     </section>
 
-    <!-- SEGUNDO APARTADO -->
-    <section id="productos" class="productos">
-        <h2>Nuestros Productos</h2>
+
+    <!-- 2️⃣ APARTADO: BENEFICIOS -->
+    <section id="beneficios">
+        <h2>Beneficios de Nuestros Materiales</h2>
         <p>
-            En Savall Rings ofrecemos una variedad de anillos artesanales únicos, diseñados
-            con dedicación y estilo. Próximamente añadiremos fotos, precios y opciones
-            personalizadas para que encuentres la pieza perfecta para ti.
+            ✔️ Materiales resistentes al agua  
+            ✔️ No se oxidan ni pierden color  
+            ✔️ Ideales para pieles sensibles  
+            ✔️ Duraderos y perfectos para uso diario  
+            ✔️ Piedras auténticas con propiedades naturales  
+        </p>
+    </section>
+
+
+    <!-- 3️⃣ APARTADO: CUIDADO -->
+    <section id="cuidado">
+        <h2>Consejos de Cuidado</h2>
+        <p>
+            ✨ Guarda tus anillos en un lugar seco.  
+            ✨ Evita el contacto directo con perfumes o cremas.  
+            ✨ Límpialos con un paño suave después de usarlos.  
+            ✨ No los expongas a productos químicos fuertes.  
+        </p>
+    </section>
+
+
+    <!-- 4️⃣ APARTADO: CONTACTO -->
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>
+            📩 <strong>Email:</strong> savallrings@gmail.com<br>
+            📱 <strong>Instagram:</strong> @savallrings<br>
+            💬 Puedes escribirnos para encargos personalizados o dudas.
         </p>
     </section>
 
