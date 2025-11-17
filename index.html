@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Anillos</title>
 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        header {
+            background-color: #202020;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Contenedor principal dividido en dos columnas */
+        .intro-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            gap: 40px;
+        }
+
+        .texto {
+            width: 50%;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .imagen {
+            width: 50%;
+        }
+
+        .imagen img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Nuestros Anillos Artesanales</h1>
+    </header>
+
+    <section class="intro-container">
+        <div class="texto">
+            <h2>Materiales que Utilizamos</h2>
+            <p>
+                Nuestros anillos están hechos a mano utilizando materiales de alta calidad. 
+                Trabajamos principalmente con <strong>acero inoxidable</strong>, <strong>plata 925</strong> 
+                y <strong>aleaciones hipoalergénicas</strong>.  
+                Cada pieza está diseñada para ser duradera, cómoda y resistente al uso diario.
+            </p>
+            <p>
+                Además, algunos modelos incorporan piedras naturales como amatista, cuarzo rosa 
+                o turquesa, seleccionadas cuidadosamente para garantizar belleza y autenticidad.
+            </p>
+        </div>
+
+        <div class="imagen">
+            <!-- Cambia la ruta de la imagen por la tuya (por ejemplo /img/anillos.jpg) -->
+            <img src="ruta-de-tu-imagen.jpg" alt="Anillos artesanales">
+        </div>
+    </section>
+
+</body>
+</html>
