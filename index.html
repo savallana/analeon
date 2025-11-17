@@ -12,8 +12,6 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-
-            /* Colores del fondo animado */
             animation: cambiarColor 12s infinite alternate;
         }
 
@@ -57,11 +55,16 @@
             padding: 50px;
             width: 80%;
             margin: auto;
+            margin-bottom: 50px;
+            background-color: rgba(255, 255, 255, 0.6); /* Fondo semitransparente para separar */
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
 
         h2 {
             font-size: 28px;
             text-align: center;
+            margin-bottom: 25px;
         }
 
         p {
@@ -69,62 +72,125 @@
             line-height: 1.6;
         }
 
+        /* SECCION MATERIAL CON FOTO */
+        .intro-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .intro-text {
+            flex: 1 1 300px;
+        }
+
+        .intro-image {
+            flex: 1 1 300px;
+        }
+
+        .intro-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        /* LISTAS CON ICONOS */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        /* CONSEJOS EN BLOQUES */
+        .consejo {
+            background-color: #fff0f5;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+
+        .consejo h3 {
+            margin-top: 0;
+        }
+
     </style>
 </head>
 
 <body>
 
-    <!-- ENCABEZADO CON TU NOMBRE -->
+    <!-- ENCABEZADO -->
     <header>
         <h1>Savall Rings</h1>
     </header>
 
-    <!-- MENÚ SUPERIOR CON LOS 4 APARTADOS -->
+    <!-- MENÚ -->
     <nav>
         <a href="#materiales">Materiales</a>
         <a href="#beneficios">Beneficios</a>
-        <a href="#cuidado">Consejos de Cuidado</a>
+        <a href="#cuidado">Consejos</a>
         <a href="#contacto">Contacto</a>
     </nav>
 
-
-    <!-- 1️⃣ APARTADO: MATERIALES -->
+    <!-- 1️⃣ MATERIAL -->
     <section id="materiales">
         <h2>Materiales que Utilizamos</h2>
-        <p>
-            En Savall Rings trabajamos con <strong>acero inoxidable de alta calidad</strong>, 
-            <strong>plata 925</strong> y <strong>aleaciones hipoalergénicas</strong>.  
-            También usamos piedras naturales seleccionadas como amatista, cuarzo rosa y turquesa.
-        </p>
+        <div class="intro-container">
+            <div class="intro-text">
+                <p>
+                    En Savall Rings trabajamos con <strong>acero inoxidable de alta calidad</strong>, 
+                    <strong>plata 925</strong> y <strong>aleaciones hipoalergénicas</strong>.  
+                    También usamos piedras naturales seleccionadas como amatista, cuarzo rosa y turquesa.
+                </p>
+            </div>
+            <div class="intro-image">
+                <img src="ruta-de-tu-imagen.jpg" alt="Anillos artesanales">
+            </div>
+        </div>
     </section>
 
-
-    <!-- 2️⃣ APARTADO: BENEFICIOS -->
+    <!-- 2️⃣ BENEFICIOS -->
     <section id="beneficios">
-        <h2>Beneficios de Nuestros Materiales</h2>
-        <p>
-            ✔️ Materiales resistentes al agua  
-            ✔️ No se oxidan ni pierden color  
-            ✔️ Ideales para pieles sensibles  
-            ✔️ Duraderos y perfectos para uso diario  
-            ✔️ Piedras auténticas con propiedades naturales  
-        </p>
+        <h2>Beneficios y Por Qué Elegirnos</h2>
+        <ul>
+            <li>💎 Materiales resistentes al agua</li>
+            <li>✨ No se oxidan ni pierden color</li>
+            <li>🛡️ Ideales para pieles sensibles</li>
+            <li>🏆 Duraderos y perfectos para uso diario</li>
+            <li>🌿 Piedras auténticas con propiedades naturales</li>
+        </ul>
+        <h3>Por qué elegir Savall Rings:</h3>
+        <ul>
+            <li>🌟 Diseño único y artesanal</li>
+            <li>💖 Atención personalizada</li>
+            <li>🚚 Envío rápido y seguro</li>
+            <li>💬 Soporte y recomendaciones profesionales</li>
+        </ul>
     </section>
 
-
-    <!-- 3️⃣ APARTADO: CUIDADO -->
+    <!-- 3️⃣ CONSEJOS -->
     <section id="cuidado">
         <h2>Consejos de Cuidado</h2>
-        <p>
-            ✨ Guarda tus anillos en un lugar seco.  
-            ✨ Evita el contacto directo con perfumes o cremas.  
-            ✨ Límpialos con un paño suave después de usarlos.  
-            ✨ No los expongas a productos químicos fuertes.  
-        </p>
+        <div class="consejo">
+            <h3>Guarda tus anillos</h3>
+            <p>🥗 Mantén tus anillos en un lugar seco y separado para evitar rayones.</p>
+        </div>
+        <div class="consejo">
+            <h3>Evita químicos</h3>
+            <p>⚗️ No expongas tus anillos a perfumes, cremas o productos de limpieza fuertes.</p>
+        </div>
+        <div class="consejo">
+            <h3>Limpieza suave</h3>
+            <p>🧼 Límpialos con un paño suave después de usarlos para mantener su brillo.</p>
+        </div>
     </section>
 
-
-    <!-- 4️⃣ APARTADO: CONTACTO -->
+    <!-- 4️⃣ CONTACTO -->
     <section id="contacto">
         <h2>Contacto</h2>
         <p>
