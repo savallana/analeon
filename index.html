@@ -3,24 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda de Anillos</title>
+    <title>Savall Rings</title>
 
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
+            background-color: #f8d6e1; /* Rosa pastel */
         }
 
+        /* ENCABEZADO */
         header {
             background-color: #202020;
             color: white;
-            padding: 20px;
+            padding: 20px 0;
             text-align: center;
         }
 
-        /* Contenedor principal dividido en dos columnas */
+        /* MENU SUPERIOR */
+        nav {
+            background-color: #ffb6c9;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px 0;
+            font-size: 18px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #202020;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* SECCIÓN PRINCIPAL */
         .intro-container {
             display: flex;
             justify-content: center;
@@ -44,16 +65,40 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.2);
         }
+
+        /* SEGUNDO APARTADO */
+        .productos {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .productos h2 {
+            font-size: 28px;
+        }
+
+        .productos p {
+            font-size: 18px;
+            width: 70%;
+            margin: auto;
+        }
     </style>
 </head>
 
 <body>
 
+    <!-- NOMBRE DE LA EMPRESA -->
     <header>
-        <h1>Nuestros Anillos Artesanales</h1>
+        <h1>Savall Rings</h1>
     </header>
 
-    <section class="intro-container">
+    <!-- MENU DE APARTADOS -->
+    <nav>
+        <a href="#materiales">Materiales</a>
+        <a href="#productos">Nuestros Productos</a>
+    </nav>
+
+    <!-- PRIMER APARTADO -->
+    <section id="materiales" class="intro-container">
         <div class="texto">
             <h2>Materiales que Utilizamos</h2>
             <p>
@@ -69,9 +114,18 @@
         </div>
 
         <div class="imagen">
-            <!-- Cambia la ruta de la imagen por la tuya (por ejemplo /img/anillos.jpg) -->
             <img src="ruta-de-tu-imagen.jpg" alt="Anillos artesanales">
         </div>
+    </section>
+
+    <!-- SEGUNDO APARTADO -->
+    <section id="productos" class="productos">
+        <h2>Nuestros Productos</h2>
+        <p>
+            En Savall Rings ofrecemos una variedad de anillos artesanales únicos, diseñados
+            con dedicación y estilo. Próximamente añadiremos fotos, precios y opciones
+            personalizadas para que encuentres la pieza perfecta para ti.
+        </p>
     </section>
 
 </body>
