@@ -1,204 +1,310 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Savall Rings</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Savall Rings</title>
 
-    <style>
+<style>
+    /* FONDO ANIMADO SUAVE */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        animation: cambiarColor 15s infinite alternate;
+        scroll-behavior: smooth;
+    }
 
-        /* ANIMACIÓN DE FONDO CAMBIANDO COLORES */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            animation: cambiarColor 12s infinite alternate;
-        }
+    @keyframes cambiarColor {
+        0%   { background-color: #ffd6e7; }
+        33%  { background-color: #b8f5f0; }
+        66%  { background-color: #ffeccf; }
+        100% { background-color: #d3eaff; }
+    }
 
-        @keyframes cambiarColor {
-            0%   { background-color: #ffd6e7; }  /* Rosa pastel */
-            33%  { background-color: #b8f5f0; }  /* Turquesa suave */
-            66%  { background-color: #ffeccf; }  /* Melocotón pastel */
-            100% { background-color: #d3eaff; }  /* Azul pastel */
-        }
+    /* MENÚ FIJO ARRIBA */
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background-color: #202020;
+        color: white;
+        padding: 15px 0;
+        text-align: center;
+    }
 
-        /* ENCABEZADO */
-        header {
-            background-color: #202020;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        padding: 10px 0;
+        background-color: #ffb6c9;
+        font-size: 18px;
+    }
 
-        /* MENÚ SUPERIOR */
-        nav {
-            background-color: #ffb6c9;
-            display: flex;
-            justify-content: center;
-            gap: 35px;
-            padding: 15px 0;
-            font-size: 19px;
-        }
+    nav a {
+        text-decoration: none;
+        color: #202020;
+        font-weight: bold;
+        transition: 0.3s;
+    }
 
-        nav a {
-            text-decoration: none;
-            color: #202020;
-            font-weight: bold;
-        }
+    nav a:hover {
+        color: #fff;
+        text-decoration: underline;
+    }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+    /* SECCIONES */
+    section {
+        width: 85%;
+        margin: 60px auto;
+        padding: 50px;
+        background-color: rgba(255,255,255,0.75);
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 1s ease-out;
+    }
 
-        /* ESTILO DE CADA SECCIÓN */
-        section {
-            padding: 50px;
-            width: 80%;
-            margin: auto;
-            margin-bottom: 50px;
-            background-color: rgba(255, 255, 255, 0.6); /* Fondo semitransparente para separar */
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-        }
+    section.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-        h2 {
-            font-size: 28px;
-            text-align: center;
-            margin-bottom: 25px;
-        }
+    h2 {
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 25px;
+    }
 
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
 
-        /* SECCION MATERIAL CON FOTO */
+    /* VIDEO INICIAL */
+    .video-container {
+        width: 80%;
+        margin: 30px auto;
+        text-align: center;
+    }
+
+    .video-container video {
+        width: 100%;
+        max-width: 800px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    /* MATERIAL CON FOTO */
+    .intro-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .intro-text, .intro-image {
+        flex: 1 1 300px;
+    }
+
+    .intro-image img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    /* LISTAS CON EMOJIS */
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    li {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+
+    /* CONSEJOS EN TARJETAS */
+    .consejo {
+        background-color: #fff0f5;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 15px 0;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .consejo h3 {
+        margin-top: 0;
+    }
+
+    /* FAQ BLOQUES */
+    .faq-item {
+        background-color: #f0f8ff;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 15px 0;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .faq-item h3 {
+        margin-top: 0;
+    }
+
+    /* BOTONES */
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ffb6c9;
+        color: #202020;
+        font-weight: bold;
+        border-radius: 8px;
+        text-decoration: none;
+        margin-top: 15px;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #ff8cb6;
+        color: #fff;
+    }
+
+    @media (max-width: 768px) {
         .intro-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
+            flex-direction: column;
         }
-
-        .intro-text {
-            flex: 1 1 300px;
-        }
-
-        .intro-image {
-            flex: 1 1 300px;
-        }
-
-        .intro-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        }
-
-        /* LISTAS CON ICONOS */
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        li {
-            margin: 10px 0;
-            font-size: 18px;
-        }
-
-        /* CONSEJOS EN BLOQUES */
-        .consejo {
-            background-color: #fff0f5;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 15px 0;
-            box-shadow: 0 0 8px rgba(0,0,0,0.1);
-        }
-
-        .consejo h3 {
-            margin-top: 0;
-        }
-
-    </style>
+    }
+</style>
 </head>
 
 <body>
 
-    <!-- ENCABEZADO -->
-    <header>
-        <h1>Savall Rings</h1>
-    </header>
+<!-- ENCABEZADO -->
+<header>
+    <h1>Savall Rings</h1>
+</header>
 
-    <!-- MENÚ -->
-    <nav>
-        <a href="#materiales">Materiales</a>
-        <a href="#beneficios">Beneficios</a>
-        <a href="#cuidado">Consejos</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
+<!-- VIDEO INICIAL -->
+<div class="video-container">
+    <video controls autoplay muted loop>
+        <source src="ruta-de-tu-video.mp4" type="video/mp4">
+        Tu navegador no soporta el vídeo.
+    </video>
+</div>
 
-    <!-- 1️⃣ MATERIAL -->
-    <section id="materiales">
-        <h2>Materiales que Utilizamos</h2>
-        <div class="intro-container">
-            <div class="intro-text">
-                <p>
-                    En Savall Rings trabajamos con <strong>acero inoxidable de alta calidad</strong>, 
-                    <strong>plata 925</strong> y <strong>aleaciones hipoalergénicas</strong>.  
-                    También usamos piedras naturales seleccionadas como amatista, cuarzo rosa y turquesa.
-                </p>
-            </div>
-            <div class="intro-image">
-                <img src="ruta-de-tu-imagen.jpg" alt="Anillos artesanales">
-            </div>
+<!-- MENÚ -->
+<nav>
+    <a href="#materiales">Materiales</a>
+    <a href="#beneficios">Beneficios</a>
+    <a href="#cuidado">Consejos</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contacto">Contacto</a>
+</nav>
+
+<!-- 1️⃣ MATERIAL -->
+<section id="materiales">
+    <h2>Materiales que Utilizamos</h2>
+    <div class="intro-container">
+        <div class="intro-text">
+            <p>
+                En Savall Rings trabajamos con <strong>acero inoxidable de alta calidad</strong>, 
+                <strong>plata 925</strong> y <strong>aleaciones hipoalergénicas</strong>.  
+                También usamos piedras naturales seleccionadas como amatista, cuarzo rosa y turquesa.
+            </p>
+            <a href="#" class="btn">Ver Productos</a>
         </div>
-    </section>
-
-    <!-- 2️⃣ BENEFICIOS -->
-    <section id="beneficios">
-        <h2>Beneficios y Por Qué Elegirnos</h2>
-        <ul>
-            <li>💎 Materiales resistentes al agua</li>
-            <li>✨ No se oxidan ni pierden color</li>
-            <li>🛡️ Ideales para pieles sensibles</li>
-            <li>🏆 Duraderos y perfectos para uso diario</li>
-            <li>🌿 Piedras auténticas con propiedades naturales</li>
-        </ul>
-        <h3>Por qué elegir Savall Rings:</h3>
-        <ul>
-            <li>🌟 Diseño único y artesanal</li>
-            <li>💖 Atención personalizada</li>
-            <li>🚚 Envío rápido y seguro</li>
-            <li>💬 Soporte y recomendaciones profesionales</li>
-        </ul>
-    </section>
-
-    <!-- 3️⃣ CONSEJOS -->
-    <section id="cuidado">
-        <h2>Consejos de Cuidado</h2>
-        <div class="consejo">
-            <h3>Guarda tus anillos</h3>
-            <p>🥗 Mantén tus anillos en un lugar seco y separado para evitar rayones.</p>
+        <div class="intro-image">
+            <img src="ruta-de-tu-imagen.jpg" alt="Anillos artesanales">
         </div>
-        <div class="consejo">
-            <h3>Evita químicos</h3>
-            <p>⚗️ No expongas tus anillos a perfumes, cremas o productos de limpieza fuertes.</p>
-        </div>
-        <div class="consejo">
-            <h3>Limpieza suave</h3>
-            <p>🧼 Límpialos con un paño suave después de usarlos para mantener su brillo.</p>
-        </div>
-    </section>
+    </div>
+</section>
 
-    <!-- 4️⃣ CONTACTO -->
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <p>
-            📩 <strong>Email:</strong> savallrings@gmail.com<br>
-            📱 <strong>Instagram:</strong> @savallrings<br>
-            💬 Puedes escribirnos para encargos personalizados o dudas.
-        </p>
-    </section>
+<!-- 2️⃣ BENEFICIOS -->
+<section id="beneficios">
+    <h2>Beneficios y Por Qué Elegirnos</h2>
+    <ul>
+        <li>💎 Materiales resistentes al agua</li>
+        <li>✨ No se oxidan ni pierden color</li>
+        <li>🛡️ Ideales para pieles sensibles</li>
+        <li>🏆 Duraderos y perfectos para uso diario</li>
+        <li>🌿 Piedras auténticas con propiedades naturales</li>
+    </ul>
+    <h3>Por qué elegir Savall Rings:</h3>
+    <ul>
+        <li>🌟 Diseño único y artesanal</li>
+        <li>💖 Atención personalizada</li>
+        <li>🚚 Envío rápido y seguro</li>
+        <li>💬 Soporte y recomendaciones profesionales</li>
+    </ul>
+    <a href="#" class="btn">Comprar Ahora</a>
+</section>
+
+<!-- 3️⃣ CONSEJOS -->
+<section id="cuidado">
+    <h2>Consejos de Cuidado</h2>
+    <div class="consejo">
+        <h3>Guarda tus anillos</h3>
+        <p>🥗 Mantén tus anillos en un lugar seco y separado para evitar rayones.</p>
+    </div>
+    <div class="consejo">
+        <h3>Evita químicos</h3>
+        <p>⚗️ No expongas tus anillos a perfumes, cremas o productos de limpieza fuertes.</p>
+    </div>
+    <div class="consejo">
+        <h3>Limpieza suave</h3>
+        <p>🧼 Límpialos con un paño suave después de usarlos para mantener su brillo.</p>
+    </div>
+</section>
+
+<!-- 4️⃣ PREGUNTAS FRECUENTES -->
+<section id="faq">
+    <h2>Preguntas Frecuentes</h2>
+    <div class="faq-item">
+        <h3>💍 ¿Cómo elijo mi talla de anillo?</h3>
+        <p>Mide el diámetro de un anillo que te quede bien o consulta nuestra guía de tallas disponible en cada producto.</p>
+    </div>
+    <div class="faq-item">
+        <h3>🚚 ¿Cuánto tarda el envío?</h3>
+        <p>Todos los pedidos se procesan en 2-3 días hábiles.<br>
+        • Envíos nacionales: 3-7 días<br>
+        • Envíos internacionales: 7-14 días</p>
+    </div>
+    <div class="faq-item">
+        <h3>🔄 ¿Qué hago si el anillo no me queda bien?</h3>
+        <p>Ofrecemos cambios de talla dentro de los 15 días posteriores a la compra, siempre que el anillo esté en perfecto estado.</p>
+    </div>
+    <div class="faq-item">
+        <h3>✨ ¿Puedo personalizar un anillo?</h3>
+        <p>Sí, muchos modelos ofrecen opciones de grabado o diseños personalizados. Consulta la sección del producto para más detalles.</p>
+    </div>
+</section>
+
+<!-- 5️⃣ CONTACTO -->
+<section id="contacto">
+    <h2>Contacto</h2>
+    <p>
+        📩 <strong>Email:</strong> savallrings@gmail.com<br>
+        📱 <strong>Instagram:</strong> @savallrings<br>
+        💬 Puedes escribirnos para encargos personalizados o dudas.
+    </p>
+</section>
+
+<!-- SCRIPT PARA ANIMACIÓN AL SCROLL -->
+<script>
+    const sections = document.querySelectorAll("section");
+    const options = { threshold: 0.2 };
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add("visible");
+            }
+        });
+    }, options);
+
+    sections.forEach(section => { observer.observe(section); });
+</script>
 
 </body>
 </html>
